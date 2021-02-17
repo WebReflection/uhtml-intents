@@ -1,0 +1,1 @@
+self.uhtmlIntent=function(n){"use strict";var t=new Map;return n.define=function(n,e){t.set(n,e)},n.intent=function(n){return function(e){for(var r in n)if(t.has(r))return t.get(r).call(n,n[r],e)}},n}({}).default;
