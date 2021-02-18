@@ -6,6 +6,8 @@
 
 An utility to bring [hyperHTML intents](https://github.com/WebReflection/hyperHTML#readme) into [µhtml](https://github.com/WebReflection/uhtml#readme).
 
+**[Live Demo](https://codepen.io/WebReflection/pen/OJbgpMx?editors=0010)**
+
 ```js
 import {render, html} from 'uhtml';
 import {define, intent} from 'uhtml-intents';
