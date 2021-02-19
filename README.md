@@ -42,4 +42,17 @@ render(document.body, html`
 
   * *µhtml* now accepts callbacks as element placeholders, meaning any extension could be easily added, and this micro-utility facilitates placeholders extensions while rendering anything
   * `define(name, callback)` register a specific intent by name, used to check objects literals while rendering. If the name, as key, is found, the registered callback will be invoked with the *value*, and the *comment* node that represents the *µhtml* pin in the document.
-  * the defined callback also receives the object itself as its own context, if available, so that this pattern enables more complex intents
+  * the defined callback also receives the object itself as its own context, if available, so that this pattern enables more complex intents.
+  * the *name* can be a `Symbol('intent')` too, to be sure there won't ever be intents name's clashing, example:
+
+```js
+const myIntent = Symbol('my-intent');
+
+define(myIntent, doMyThing);
+
+render(document.body, html`
+  <div>
+    ${intent({[myIntent]: data})}
+  </div>
+`);
+```

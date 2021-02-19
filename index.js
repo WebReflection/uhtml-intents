@@ -1,7 +1,9 @@
 self.uhtmlIntent = (function (exports) {
   'use strict';
 
-  var intents = new Map();
+  var names = [];
+  var callbacks = [];
+  var length = 0;
   /**
    * Registers a specific key to look for per each intent invoke.
    * @param {string} name the intent name as object key
@@ -9,7 +11,8 @@ self.uhtmlIntent = (function (exports) {
    */
 
   var define = function define(name, callback) {
-    intents.set(name, callback);
+    length = names.push(name);
+    callbacks.push(callback);
   };
   /**
    * Returns a callback that will be triggered bu uhtml to retrieve any data.
@@ -20,8 +23,8 @@ self.uhtmlIntent = (function (exports) {
 
   var intent = function intent(object) {
     return function (comment) {
-      for (var key in object) {
-        if (intents.has(key)) return intents.get(key).call(object, object[key], comment);
+      for (var i = 0; i < length; i++) {
+        if (names[i] in object) return callbacks[i].call(object, object[names[i]], comment);
       }
     };
   };

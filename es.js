@@ -1,1 +1,1 @@
-self.uhtmlIntent=function(t){"use strict";const n=new Map;return t.define=(t,e)=>{n.set(t,e)},t.intent=t=>e=>{for(const r in t)if(n.has(r))return n.get(r).call(t,t[r],e)},t}({}).default;
+self.uhtmlIntent=function(t){"use strict";const n=[],e=[];let r=0;return t.define=(t,u)=>{r=n.push(t),e.push(u)},t.intent=t=>u=>{for(let i=0;i<r;i++)if(n[i]in t)return e[i].call(t,t[n[i]],u)},t}({}).default;

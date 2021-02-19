@@ -1,1 +1,1 @@
-self.uhtmlIntent=function(n){"use strict";var t=new Map;return n.define=function(n,e){t.set(n,e)},n.intent=function(n){return function(e){for(var r in n)if(t.has(r))return t.get(r).call(n,n[r],e)}},n}({}).default;
+self.uhtmlIntent=function(n){"use strict";var t=[],u=[],r=0;return n.define=function(n,e){r=t.push(n),u.push(e)},n.intent=function(n){return function(e){for(var i=0;i<r;i++)if(t[i]in n)return u[i].call(n,n[t[i]],e)}},n}({}).default;

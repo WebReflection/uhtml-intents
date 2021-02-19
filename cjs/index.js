@@ -1,5 +1,8 @@
 'use strict';
-const intents = new Map;
+const names = [];
+const callbacks = [];
+
+let length = 0;
 
 /**
  * Registers a specific key to look for per each intent invoke.
@@ -7,7 +10,8 @@ const intents = new Map;
  * @param {function} callback the callback to invoke when key matches
  */
 const define = (name, callback) => {
-  intents.set(name, callback);
+  length = names.push(name);
+  callbacks.push(callback);
 };
 exports.define = define;
 
@@ -18,9 +22,9 @@ exports.define = define;
  *                 its associated callback would return
  */
 const intent = object => comment => {
-  for (const key in object) {
-    if (intents.has(key))
-      return intents.get(key).call(object, object[key], comment);
+  for (let i = 0; i < length; i++) {
+    if (names[i] in object)
+      return callbacks[i].call(object, object[names[i]], comment);
   }
 };
 exports.intent = intent;
