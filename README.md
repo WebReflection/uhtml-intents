@@ -1,6 +1,6 @@
 # <em>µ</em>html-intents
 
-[![Build Status](https://travis-ci.com/WebReflection/uhtml-intents.svg?branch=main)](https://travis-ci.com/WebReflection/uhtml-intents) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/uhtml-intents/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/uhtml-intents?branch=main)
+[![Build Status](https://travis-ci.com/WebReflection/uhtml-intents.svg?branch=main)](https://travis-ci.com/WebReflection/uhtml-intents) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/uhtml-intents/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/uhtml-intents?branch=main) [![CSP strict](https://webreflection.github.io/csp/strict.svg)](https://webreflection.github.io/csp/#-csp-strict)
 
 <sup>**Social Media Photo by [Markus Winkler](https://unsplash.com/@markuswinkler) on [Unsplash](https://unsplash.com/)**</sup>
 
